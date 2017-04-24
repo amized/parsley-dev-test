@@ -142,7 +142,7 @@ export default function FormMedicalHistory(props) {
           <div className="form-row">
             <Textarea
               name="surgeries"
-              label="List the surgeries"
+              label="List the surgeries together with the approximate date/year"
               value={fields["surgeries"].value}
             />
           </div>

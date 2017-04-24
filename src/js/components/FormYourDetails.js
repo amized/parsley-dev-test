@@ -21,7 +21,11 @@ const raceOptions = [
 const maritalOptions = [
   {value: '-1', label: 'Please select...', disabled: true},
   {value: 'married', label: 'Married'},
-  {value: 'single', label: 'Single'}
+  {value: 'Divorced', label: 'Divorced'},
+  {value: 'Life Partner', label: 'Life Partner'},
+  {value: 'Separated', label: 'Separated'},
+  {value: 'Widowed', label: 'Widowed'},
+  {value: 'Other', label: 'Other'}
 ];
 
 
