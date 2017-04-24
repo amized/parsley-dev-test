@@ -1,0 +1,54 @@
+
+
+
+.form-step {
+	display: none;
+	position: relative;
+	min-height: 440px;
+}
+.form-step__buttons {
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+
+	a:first-child {
+		.form-step--first-sub-step & {
+			visibility: hidden;
+		}
+	}
+	
+	@media (max-width: $bp-medium) {
+		position: relative;
+		margin-top: 30px;
+	}
+}
+
+
+
+.form-step--current {
+	display: block;
+}
+
+.form-sub-step {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	//visibility: hidden;
+	//opacity: 0;
+	transition: opacity 0.5s, visibility 0.5s 0.5s;
+	&--current {
+		transition: opacity 0.5s, visibility 0.5s 0s;
+		visibility: visible;
+		opacity: 1;
+	}
+
+	@media (max-width: $bp-medium) {
+		position: relative;
+	}
+}
+
+
