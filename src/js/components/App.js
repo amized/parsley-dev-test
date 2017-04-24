@@ -181,8 +181,7 @@ export default class App extends Component {
                   : (
                     <div className="intro">
                       <h2>Patient Sign Up</h2>
-                      <p>To register we just need to grab some information from you. This shouldn't take
-                      longer than 10 minutes!
+                      <p>{"To register we just need to grab some information from you. This shouldn't take longer than 10 minutes!"}
                       </p>
                       <a className="btn btn-success" onClick={this.start}>Get started</a>
 
