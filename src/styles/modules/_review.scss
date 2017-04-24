@@ -1,6 +1,8 @@
 
 
-
+.review {
+	position: relative;
+}
 .review-main {
 	opacity: 1;
 	transition: opacity 0.4s;
@@ -29,7 +31,7 @@
 	margin-bottom: 20px;
 	display: flex;
 	flex-direction: column;
-	max-height: 500px;
+	max-height: 400px;
 	flex-wrap: wrap;
 	flex-flow: column wrap;
 	align-content: space-between;
@@ -81,11 +83,15 @@
 .review-loader {
 	display: none;
 	position: absolute;
-	top: 50%;
-	left: 50%;
-
+    top: 0px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    align-items: center;
+    jusitfy-content: center;
 	.app--submitting & {
-		display: block;
+		display: flex;
 	}
 }
 

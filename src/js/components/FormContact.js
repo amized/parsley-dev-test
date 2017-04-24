@@ -6,17 +6,17 @@ import { Input, Select, RadioGroup, Form } from 'formsy-react-components'
 
 const contactMethodOptions = [
   {
-      label: "Email",
-      value: "email"
+    label: "Email",
+    value: "email"
   },
 
   {
-      label: "SMS",
-      value: "sms"
+    label: "SMS",
+    value: "sms"
   },
   {
-      label: "Phone call",
-      value: "phone"
+    label: "Phone call",
+    value: "phone"
   },
 ]
 
@@ -261,36 +261,36 @@ const stateOptions = [
 ]
 
 export default function FormContact(props) {
-	const { fields, currentSubStep } = props;
-	
-	switch (currentSubStep) {
+  const { fields, currentSubStep } = props;
+  
+  switch (currentSubStep) {
 
-		case 0: {
-			return (
-				<div className="form-block">
-					<div className="form-block__label">
-						Please provide some contact details
-					</div>
-					<div className="form-row form-row__thirds">
-						<Input
-							name="cellPhone"
-							label="Cell number"
-							value={fields["cellPhone"].value}
-							required
-						/>
+    case 0: {
+      return (
+        <div className="form-block">
+          <div className="form-block__label">
+            Please provide some contact details
+          </div>
+          <div className="form-row form-row__thirds">
+            <Input
+              name="cellPhone"
+              label="Cell number"
+              value={fields["cellPhone"].value}
+              required
+            />
             <Input
               name="homePhone"
               label="Home phone number"
               value={fields["homePhone"].value}
             />
-						<Input
-							name="email"
-							type="email"
-							label="Email address"
-							value={fields["email"].value}
-							required
-						/>
-					</div>
+            <Input
+              name="email"
+              type="email"
+              label="Email address"
+              value={fields["email"].value}
+              required
+            />
+          </div>
           <div className="form-row">
             <RadioGroup
               name="contactMethod"
@@ -302,62 +302,62 @@ export default function FormContact(props) {
 
           </div>
 
-				</div>
-			)
-		}
+        </div>
+      )
+    }
 
-		case 1: {
-			return (
-				<div className="form-block">
-					<div className="form-block__label">
-						Where are you currently living?
-					</div>
-					<div className="form-row form-row__half">
-						<Input
-							name="address1"
-							label="Address line 1"
-							value={fields["address1"].value}
-							required
-						/>
-					</div>
-					<div className="form-row form-row__half">
-						<Input
-							name="address2"
-							label="Address line 2"
-							value={fields["address2"].value}
-						/>
-					</div>
-					<div className="form-row form-row__thirds">
-						<Input
-							name="city"
-							label="Suburb / City"
-							value={fields["city"].value}
-							required
-						/>
+    case 1: {
+      return (
+        <div className="form-block">
+          <div className="form-block__label">
+            Where are you currently living?
+          </div>
+          <div className="form-row form-row__half">
+            <Input
+              name="address1"
+              label="Address line 1"
+              value={fields["address1"].value}
+              required
+            />
+          </div>
+          <div className="form-row form-row__half">
+            <Input
+              name="address2"
+              label="Address line 2"
+              value={fields["address2"].value}
+            />
+          </div>
+          <div className="form-row form-row__thirds">
+            <Input
+              name="city"
+              label="Suburb / City"
+              value={fields["city"].value}
+              required
+            />
 
-						<Select
-							name="state"
+            <Select
+              name="state"
               label="State"
               placeholder="Select..."
               value={fields["state"].value}
               options={stateOptions}
               required
-						/>
+            />
 
-						<Input
-							name="postcode"
-							label="Postcode"
-							value={fields["postcode"].value}
-							required
-						/>
-					</div>
-				</div>
-			)
-		}
-		default:
-			return null;
-	}
-	
+            <Input
+              name="postcode"
+              label="Postcode"
+              value={fields["postcode"].value}
+              required
+            />
+          </div>
+        </div>
+      )
+    }
+    default:
+      return null;
+  }
+  
 }
 
 

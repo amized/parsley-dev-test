@@ -12,7 +12,7 @@ import FormReview from './FormReview'
 import FormContact from './FormContact'
 import fields from '../fields'
 
-const steps = [
+const initialSteps = [
   {
     id: 0,
     title: "Your details",
@@ -44,18 +44,35 @@ const steps = [
   }
 ]
 
+const initialFields = fields;
+
 
 export default class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      currentStep: 0,
-      fields: fields,
-      steps: steps,
+      currentStep: null,
+      fields: JSON.parse(JSON.stringify(initialFields)),
+      steps: initialSteps,
       isSubmitting: false,
       isSuccess: false
     }
+  }
+
+  reset = (e) => {
+
+    const { steps } = this.state;
+
+    steps.forEach(step=> {
+      step.isComplete = false;
+    })
+
+    this.setState({
+      currentStep: 0,
+      fields: JSON.parse(JSON.stringify(initialFields)),
+      steps: steps
+    })
   }
 
   start = (e) => {
@@ -82,13 +99,14 @@ export default class App extends Component {
       data[name] = this.state.fields[name].value;
     })
 
-    console.log("==== SUBMITTING PAYLOAD TO SERVER ====");
-    console.log(data);
-
     this.setState({
       isSubmitting: true
     })
 
+    console.log("==== SUBMITTING PAYLOAD TO SERVER ====");
+    console.log(data);
+
+    // Simulates sending to the server
     setTimeout(() => {
       this.setState({
         isSubmitting: false,
@@ -96,7 +114,6 @@ export default class App extends Component {
         currentStep: null
       })
     }, 4000);
-
   }
 
   onChangeStep = (index) => {
@@ -157,7 +174,7 @@ export default class App extends Component {
                       <h2>Registration complete!</h2>
                       <p>Congratulations { fields["firstName"].value }, you have successfully registered. One of our consultants will be in touch
                       with you within 2 days.</p>
-                      <a className="btn btn-success">Login</a>
+                      <a className="btn btn-success" onClick={this.reset}>Register again</a>
 
                     </div>
                   )

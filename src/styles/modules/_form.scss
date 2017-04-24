@@ -40,10 +40,16 @@
 .checkbox, .radio {
 	margin-bottom: 15px;
 	margin-top: 0px;
+	font-size: 14px;
+	color: #333;
 	label {
 		display: flex;
 		align-items: center;
 	}
+}
+
+.checkbox + .checkbox {
+    margin-top: 0px;
 }
 
 .radio {

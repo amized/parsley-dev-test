@@ -55,6 +55,7 @@ export default class FormStep extends Component {
       return
     }
     else {
+      this.props.updateFields(this.form.refs.formsy.getModel());
       this.setState({
         currentSubStep: curr - 1
       })
@@ -94,6 +95,7 @@ export default class FormStep extends Component {
           onValidSubmit={this.onValidSubmit}
           validateOnSubmit={true}
           layout="vertical" 
+          ref={(el)=> { this.form = el }}
         >
           <div className="form-sub-step">
             <StepComponent fields={fields} currentSubStep={currentSubStep}  {...this.props} />

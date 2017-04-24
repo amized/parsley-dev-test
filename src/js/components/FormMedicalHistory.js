@@ -29,29 +29,29 @@ const conditionOptions = [
 
 
 export default function FormMedicalHistory(props) {
-	const { fields, currentSubStep } = props;
-	
-	switch (currentSubStep) {
-		case 0: {
-			return (
-				<div className="form-block">
-					<div className="form-block__label">
-						Do you have any MEDICATIONS you are currently taking, prescribed or over the counter?
-					</div>
-					<div className="form-row">
-						<Textarea
-							name="medications"
-							label="List the medication names and dosages"
-							value={fields["medications"].value}
+  const { fields, currentSubStep } = props;
+  
+  switch (currentSubStep) {
+    case 0: {
+      return (
+        <div className="form-block">
+          <div className="form-block__label">
+            Do you have any MEDICATIONS you are currently taking, prescribed or over the counter?
+          </div>
+          <div className="form-row">
+            <Textarea
+              name="medications"
+              label="List the medication names and dosages"
+              value={fields["medications"].value}
             />
-					</div>
-				</div>
-			)
-		}
+          </div>
+        </div>
+      )
+    }
 
-		case 1: {
-			return (
-				<div className="form-block">
+    case 1: {
+      return (
+        <div className="form-block">
           <div className="form-block__label">
             Do you have any allergies to Medication or Food? 
           </div>
@@ -63,9 +63,9 @@ export default function FormMedicalHistory(props) {
             />
           </div>
 
-				</div>
-			)
-		}
+        </div>
+      )
+    }
 
     case 2: {
       return (
@@ -106,20 +106,20 @@ export default function FormMedicalHistory(props) {
     }
 
 
-		case 3: {
-			return (
-				<div className="form-block">
-					<div className="form-block__label">
-						Have YOU or a FAMILY MEMBER had any of the following conditions?
-					</div>
-					<div className="form-row form-row__checkboxes">
+    case 3: {
+      return (
+        <div className="form-block">
+          <div className="form-block__label">
+            Have YOU or a FAMILY MEMBER had any of the following conditions?
+          </div>
+          <div className="form-row form-row__checkboxes">
             <CheckboxGroup
                 name="conditions"
                 value={fields["conditions"].value}
                 label="Please tick"
                 options={conditionOptions}
             />
-					</div>
+          </div>
           <div className="form-row">
              <Input
               name="otherConditions"
@@ -128,9 +128,9 @@ export default function FormMedicalHistory(props) {
             />
           </div>
 
-				</div>
-			)
-		}
+        </div>
+      )
+    }
 
 
     case 4: {
@@ -151,10 +151,10 @@ export default function FormMedicalHistory(props) {
       )
     }
 
-		default:
-			return null;
-	}
-	
+    default:
+      return null;
+  }
+  
 }
 
 
