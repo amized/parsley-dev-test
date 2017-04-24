@@ -23,7 +23,7 @@ const conditionOptions = [
     {value: 'Stroke', label: 'Stroke'},
     {value: 'Seizure Disorder', label: 'Seizure Disorder'},
     {value: 'Thyroid Disorder', label: 'Thyroid Disorder'},
-    {value: 'Secually Transmitted Disease', label: 'Secually Transmitted Disease'},
+    {value: 'Sexually Transmitted Disease', label: 'Sexually Transmitted Disease'},
     
 ]
 

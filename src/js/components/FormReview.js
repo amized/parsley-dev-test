@@ -41,7 +41,7 @@ export default function FormReview(props) {
       return (
         <div className="form-block">
           <div className="form-block__label">
-            {"We're almost done! Please read and confirm that you accept our terms of use."}
+            {"We're almost done! Please read and confirm that you accept our terms."}
           </div>
           <div className="form-terms">
             {terms}
@@ -49,7 +49,7 @@ export default function FormReview(props) {
           <div className="form-row form-row-terms">
             <Checkbox
               name="terms"
-              label="I have read and agree to the above terms of use"
+              label="I have read and agree to the above terms"
               value={fields["terms"].value}
               validations="isTrue"
               required
