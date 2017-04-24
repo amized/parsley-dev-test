@@ -34,7 +34,7 @@ export default function FormYourDetails(props) {
       return (
         <div className="form-block">
           <div className="form-block__label">
-            Let's start with some basic information
+            {"Let's start with some basic information"}
           </div>
           <div className="form-row form-row__thirds">
             <Input
